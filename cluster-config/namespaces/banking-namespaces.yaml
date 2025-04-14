@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: payments
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: account-management
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: transaction-history
