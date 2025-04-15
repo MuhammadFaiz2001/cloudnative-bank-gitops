@@ -5,4 +5,4 @@ metadata:
   namespace: payments
 data:
   environment: production
-  log-level: info
+  log-level: debug
