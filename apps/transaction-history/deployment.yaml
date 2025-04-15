@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: transaction-history-service
+  namespace: transaction-history
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: transaction-history-service
+  template:
+    metadata:
+      labels:
+        app: transaction-history-service
+    spec:
+      containers:
+      - name: transaction-history
+        image: nginxdemos/hello:plain-text
+        ports:
+        - containerPort: 80
+        resources:
+          requests:
+            memory: "128Mi"
+            cpu: "100m"
+          limits:
+            memory: "256Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 80
+          initialDelaySeconds: 30
+          periodSeconds: 10
