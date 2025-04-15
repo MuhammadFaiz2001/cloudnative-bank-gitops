@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
       - name: transaction-history
-        image: nginxdemos/hello:plain-text
+        image: nginxdemos/hello
         ports:
         - containerPort: 80
   strategy:
